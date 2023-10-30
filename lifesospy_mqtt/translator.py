@@ -626,13 +626,11 @@ class Translator(object):
                 BaseUnit.PROP_IS_CONNECTED),
             Translator.PAYLOAD_AVAILABLE: str(True),
             Translator.PAYLOAD_NOT_AVAILABLE: str(False),
-        }
-
-        if device_config.device_info:
-            message[Translator.DEVICE] = self._add_device_identifiers(
+            Translator.DEVICE: self._add_device_identifiers(
                 device.device_id,
                 device_config.device_info
-            )
+            ),
+        }
 
         if device.type in {DeviceType.SmokeDetector}:
             ha_platform = Translator.PLATFORM_BINARY_SENSOR
@@ -679,13 +677,11 @@ class Translator(object):
             Translator.PAYLOAD_AVAILABLE: str(True),
             Translator.PAYLOAD_NOT_AVAILABLE: str(False),
             Translator.ENTITY_CATEGORY: Translator.DIAGNOSTIC,
-        }
-
-        if device_config.device_info:
-            message[Translator.DEVICE] = self._add_device_identifiers(
+            Translator.DEVICE: self._add_device_identifiers(
                 device.device_id,
                 device_config.device_info
-            )
+            ),
+        }
 
         self._publish(
             '{}/{}/{}/config'.format(
@@ -714,13 +710,11 @@ class Translator(object):
             Translator.PAYLOAD_AVAILABLE: str(True),
             Translator.PAYLOAD_NOT_AVAILABLE: str(False),
             Translator.ENTITY_CATEGORY: Translator.DIAGNOSTIC,
-        }
-
-        if device_config.device_info:
-            message[Translator.DEVICE] = self._add_device_identifiers(
+            Translator.DEVICE: self._add_device_identifiers(
                 device.device_id,
                 device_config.device_info
-            )
+            ),
+        }
 
         self._publish(
             '{}/{}/{}/config'.format(

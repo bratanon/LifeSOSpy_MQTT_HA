@@ -75,7 +75,11 @@ DEFAULT_CONFIG = """
   # Provide a topic for the Base Unit here
   """ + CONF_BASEUNIT + """:
     """ + CONF_TOPIC + """: home/alarm
-  
+    """ + CONF_DEVICE_INFO + """:
+      name: 'LifeSOS'
+      manufacturer: 'LifeSOS'
+      model: 'LS-20'
+      
   # List your enrolled devices here and provide a topic
   # Hint: Run with '-e' option to get a list of device ids
   """ + CONF_DEVICES + """:
@@ -84,6 +88,7 @@ DEFAULT_CONFIG = """
     #- """ + CONF_DEVICE_ID + """: '345def'
     #  """ + CONF_TOPIC + """: home/front/door
     #  """ + CONF_DEVICE_INFO + """:
+    #    name: 'Front door magnet'
     #    manufacturer: 'LifeSOS'
     #    model: 'TX-3DS'
     #- """ + CONF_DEVICE_ID + """: '123abc'
